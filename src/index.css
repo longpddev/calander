@@ -1,8 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap');
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +12,57 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.w-1\/7 {
+  width: calc(100% / 7);
+}
+
+.absolute-center {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.button-action {
+  --border-color: transparent;
+  --text-color: black;
+  --background-color: white;
+  border-width: 3px;
+  @apply rounded-lg transition-all;
+  background-color: var(--background-color);
+  border-color: var(--border-color);
+  color: var(--text-color);
+
+  user-select: none;
+}
+
+
+
+.button-action:hover {
+  --border-color: #cde9ff;
+  --text-color: #1d9cfd;
+  --background-color: white;
+}
+
+.no-select {
+  user-select: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.button-action.disabled {
+  pointer-events: none;
+  --border-color: transparent;
+  --text-color: #a3a8ad;
+  --background-color: white;
+}
+
+.button-action.active {
+  --border-color: #008ffd;
+  --text-color: white;
+  --background-color: #008ffd;
 }
